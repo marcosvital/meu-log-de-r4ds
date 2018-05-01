@@ -1,0 +1,22 @@
+# Capítulo 3: ggplot2 na veia!!!!
+
+Beleza, chegamos no capítulo de *data visualization*, que em essência deve ser um capítulo de `ggplot2`. Estou animado! :D
+
+Tá bom, entendi que os autores amam ggplot2, beleza. Ah sim, bonus points pra eles por usarem citação do Tukey, que sempre tem citações maneiras e devia ser um cara muito legal, pelo o que eu li sobre ele. :) 
+
+Enfim, vamos lá, a ideia do `ggplot2` é criar uma *gramática de gráficos* - o que faz todo sentido quando entendemos o R como linguagem. A ideia básica aqui, se eu entendo bem a proposta, é ter comandos que fazem sentido lógico, de maneira mais intuitiva do que vemos nos gráficos básicos do R.
+
+Carregar os pacores é moleza, e acho bacana essa organização dos pacotes no `tidyverse`, assim a gente carrega um tanto de coisa de uma vez.
+
+Eles não começam usando o bom e velho conjunto de dados iris - seria legal, dados biológicos e tals. Mas tranquilo, vamos mexer com motores de carro então, hehe. O tal do mpg também é um conjuntinho de dados usado em muito exemplo por aí.
+
+E percebam que a parada já começa com um chute no pau da barraca do R: os dados estão no formato `tibble`, que é próprio do `tidyverse`, e não é exatamente igual com o formato `data.frame` que está na base do R (mas eles são parecidos, e é fácil converter um `tibble` para `data.frame` usando o bom e velho `as.data.frame()`, se precisarmos - espero nem precisar).
+
+## Começando a prática: entendendo o tibble
+
+Carregando os dados, eu ainda tenho que acostumar com o formato `tibble`, mas acho que é mais coisa de hábito mesmo. Uma das características básicas dele é que se você “chama” o objeto, ele não vai tacar tudo no console como um `data.frame` faria. Ele mostra 6 linhas (como quando usamos `head()`) e no exemplo ali ele mostrou 10 colunas (não sei se é sempre assim, mas imagino que sim). Ele também nos dá as dimensões, indica os tipos de variáveis para cada coluna, e no final conta o que ficou de fora. É bacana, acho.
+
+**Vou começar a experimentar, e antes de seguir o rumo do livro, quero entender bem o tibble**
+
+Então vamos lá:
+
