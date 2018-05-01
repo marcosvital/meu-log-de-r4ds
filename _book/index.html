@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Meu log de leitura de R for Data Science</title>
+  <meta name="description" content="Meu log de leitura de R for Data Science">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Meu log de leitura de R for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Meu log de leitura de R for Data Science" />
+  
+  
+  
+
+<meta name="author" content="Marcos V. C. Vital - LEQ-UFAL">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="introducao-comecando-do-comeco.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Um livro sobre a leitura de um livro: meu log de r4ds</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#por-que-estou-escrevendo-isto"><i class="fa fa-check"></i>Por que estou escrevendo isto?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#como-eu-estou-escrevendo-isso"><i class="fa fa-check"></i>Como eu estou escrevendo isso?</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introducao-comecando-do-comeco.html"><a href="introducao-comecando-do-comeco.html"><i class="fa fa-check"></i><b>1</b> Introdução: começando do começo</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Meu log de leitura de R for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Meu log de leitura de R for Data Science</h1>
+<h4 class="author"><em>Marcos V. C. Vital - LEQ-UFAL</em></h4>
+</div>
+<div id="um-livro-sobre-a-leitura-de-um-livro-meu-log-de-r4ds" class="section level1 unnumbered">
+<h1>Um livro sobre a leitura de um livro: meu log de r4ds</h1>
+<p>Se tem alguma pessoa que pode ser considerada um “pop star” do R, seria o <a href="http://hadley.nz/">Hadley Wickham</a>: o cara é responsável pelo ggplot2 e pelo dplyr, que são alguns dos pacotes mais populares do R! Mas são justamente pacotes que eu quase não uso… :(</p>
+<p>Deixe eu explicar melhor. Eu sou usuário do R há muitos anos (fiz as contas de cabeça enquanto eu escrevo, e se não me enganei, agora em 2018 seriam uns 13 ou 14 anos!), então já tem um bocado de tempo que aprendi a como resolver (e ensinar) algumas coisas. Até aí tudo bem. Acontece que o Hadley trouxe uma maneira diferente de encarar algumas coisas no R, definindo novos estilos de escrever e usar funções, e propondo novos padrões, que são bem diferentes do uso mais tradicional da linguagem e estão inerentes em pacotes como os que eu mencionei. O efeito disso não foi pequeno: um bocado de gente não usa mais os gráficos básicos do R, substituindo completamente por ggplot2; e outras só manipulam dados usando dplyr, abandonando as funções antigas para fazer isso.</p>
+<p>É claro que isso não vem sem alguma controvérsia, e tem quem não goste das coisas que ele criou. Mas, de uma forma geral, o efeito parece muito positivo, e eu já vi várias discussões a respeito de como ensinar o R hoje em dia que sugerem que estes pacotes são mais intuitivos e fáceis de se aprender, podendo então servir como uma ótima ferramenta de ensino!</p>
+<p>Bom, aí voltamos para o ponto lá em cima: eu, pessoalmente, uso o R há um bocado de tempo, então me acostumei com a forma como faço as coisas. Nada de errado nisso, claro. Mas se eu resistir às novidades, vou acabar ficando “travado” no meu aprendizado. E pior: vou acabar perdendo a chance de aprender coisas que são úteis para se ensinar R, e isto é muito importante para mim.</p>
+<div id="por-que-estou-escrevendo-isto" class="section level2 unnumbered">
+<h2>Por que estou escrevendo isto?</h2>
+<p>Ufa, então vamos lá. A razão de eu escrever isto aqui que você está lendo é simples: decidi pegar o livro R for Data Science, de autoria do Garrett Grolemund e do Hadley Wickham, e começar a ler e aprender. Este é considerado um dos melhores livros para começar a se aprender estas novidades no R, e ele está disponível online de maneira gratuita, aqui: <a href="http://r4ds.had.co.nz/" class="uri">http://r4ds.had.co.nz/</a>.</p>
+<p>Então, puxa vida, por que não aproveitar a oportunidade e fazer as duas coisas que eu curto ao mesmo tempo? Aprender coisas novas no R e ensiná-las! :D</p>
+<p>Este meu “livro”, então, é um registro das minhas experiências de aprendizado do R for Data Science. Pense nele como um misto de log das experiências, caderno de anotações, tradução e tutorial. Alguma coisa mais ou menos assim. ;)</p>
+<p>Não sei se vou percorrer o livro todo, e nem tenho uma data certa para acabar. Mas e tudo der certo, vou avançar bastante e compartilhar esta experiência com vocês. Vamos lá!</p>
+</div>
+<div id="como-eu-estou-escrevendo-isso" class="section level2 unnumbered">
+<h2>Como eu estou escrevendo isso?</h2>
+<p>O projetinho todo é aberto, e está aqui <a href="https://github.com/marcosvital/meu-log-de-r4ds">neste repositório do GitHub</a>.</p>
+<p>Para criar este livrinho online que você está olhando, usei o fantástico <a href="https://bookdown.org/yihui/bookdown/">pacote bookdown</a>, que você pode usar também a partir do <a href="https://www.rstudio.com/">RStudio</a>. Se você já tem uma noção básica de como usar <a href="https://rmarkdown.rstudio.com/">RMarkdown</a>, usar o pacote bookdown é tipo um pulinho a mais.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="introducao-comecando-do-comeco.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

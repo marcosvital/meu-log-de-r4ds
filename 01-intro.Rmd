@@ -1,0 +1,11 @@
+# Introdução: começando do começo
+
+**A primeira pergunta é: do que vamos precisar?**
+
+Você vai precisar do R (duh!) instalado no seu computador, e talvez seja legal usá-lo com o RStudio. Eu nem sempre uso RStudio na hora de ensinar, e normalmente não uso nas minhas análises mais rápidas do dia à dia. Mas este é um hábito que eu quero experimentar mudar na medida em que começo esta jornada, então recomendo que você faça o mesmo, beleza?
+
+Eu já ouvi falar que o livro do Grolemund e do Wickham não é exatamente a melhor introdução para quem já não conhece um pouco de R antes, mas é algo que eu não tenho como dizer para vocês agora. De qualquer forma, neste meu relato eu posso de vez em quando tentar esclarecer as coisas e dar dicas pessoais, na medida em que pensar a respeito e experimentar o conteúdo. Certinho?
+
+Mas se você é um usuário bem iniciante do R, talvez este material não seja a melhor porta de entrada, e eu sugiro que você procure por algo mais introdutório. Tem umas coisas legais no meu blog, o [Cantinho do R](https://cantinhodor.wordpress.com/), de repente você começar por lá. ;)
+
+Então vamos lá!

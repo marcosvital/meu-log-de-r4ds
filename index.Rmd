@@ -1,0 +1,37 @@
+---
+title: "Meu log de leitura de R for Data Science"
+author: "Marcos V. C. Vital - LEQ-UFAL"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook: default
+  #bookdown::pdf_book: default
+---
+
+***
+
+# Um livro sobre a leitura de um livro: meu log de r4ds {-}
+
+Se tem alguma pessoa que pode ser considerada um “pop star” do R, seria o [Hadley Wickham](http://hadley.nz/): o cara é responsável pelo ggplot2 e pelo dplyr, que são alguns dos pacotes mais populares do R! Mas são justamente pacotes que eu quase não uso… :(
+
+Deixe eu explicar melhor. Eu sou usuário do R há muitos anos (fiz as contas de cabeça enquanto eu escrevo, e se não me enganei, agora em 2018 seriam uns 13 ou 14 anos!), então já tem um bocado de tempo que aprendi a como resolver (e ensinar) algumas coisas. Até aí tudo bem. Acontece que o Hadley trouxe uma maneira diferente de encarar algumas coisas no R, definindo novos estilos de escrever e usar funções, e propondo novos padrões, que são bem diferentes do uso mais tradicional da linguagem e estão inerentes em pacotes como os que eu mencionei. O efeito disso não foi pequeno: um bocado de gente não usa mais os gráficos básicos do R, substituindo completamente por ggplot2; e outras só manipulam dados usando dplyr, abandonando as funções antigas para fazer isso.
+
+É claro que isso não vem sem alguma controvérsia, e tem quem não goste das coisas que ele criou. Mas, de uma forma geral, o efeito parece muito positivo, e eu já vi várias discussões a respeito de como ensinar o R hoje em dia que sugerem que estes pacotes são mais intuitivos e fáceis de se aprender, podendo então servir como uma ótima ferramenta de ensino!
+
+Bom, aí voltamos para o ponto lá em cima: eu, pessoalmente, uso o R há um bocado de tempo, então me acostumei com a forma como faço as coisas. Nada de errado nisso, claro. Mas se eu resistir às novidades, vou acabar ficando “travado” no meu aprendizado. E pior: vou acabar perdendo a chance de aprender coisas que são úteis para se ensinar R, e isto é muito importante para mim.
+
+## Por que estou escrevendo isto? {-}
+
+Ufa, então vamos lá. A razão de eu escrever isto aqui que você está lendo é simples: decidi pegar o livro R for Data Science, de autoria do Garrett Grolemund e do Hadley Wickham, e começar a ler e aprender. Este é considerado um dos melhores livros para começar a se aprender estas novidades no R, e ele está disponível online de maneira gratuita, aqui: http://r4ds.had.co.nz/.
+
+Então, puxa vida, por que não aproveitar a oportunidade e fazer as duas coisas que eu curto ao mesmo tempo? Aprender coisas novas no R e ensiná-las! :D
+
+Este meu “livro”, então, é um registro das minhas experiências de aprendizado do R for Data Science. Pense nele como um misto de log das experiências, caderno de anotações, tradução e tutorial. Alguma coisa mais ou menos assim. ;)
+
+Não sei se vou percorrer o livro todo, e nem tenho uma data certa para acabar. Mas e tudo der certo, vou avançar bastante e compartilhar esta experiência com vocês. Vamos lá!
+
+## Como eu estou escrevendo isso? {-}
+
+O projetinho todo é aberto, e está aqui [neste repositório do GitHub](https://github.com/marcosvital/meu-log-de-r4ds).
+
+Para criar este livrinho online que você está olhando, usei o fantástico [pacote bookdown](https://bookdown.org/yihui/bookdown/), que você pode usar também a partir do [RStudio](https://www.rstudio.com/). Se você já tem uma noção básica de como usar [RMarkdown](https://rmarkdown.rstudio.com/), usar o pacote bookdown é tipo um pulinho a mais.

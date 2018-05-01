@@ -1,0 +1,13 @@
+name: meu_log_de_r4ds2
+title: Meu log de r4ds
+username: marcosvital
+account: marcosvital
+server: bookdown.org
+hostUrl: https://bookdown.org/__api__
+appId: 1349
+bundleId: 5888
+url: https://bookdown.org/marcosvital/meu_log_de_r4ds2/
+when: 1525141741.70231
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: LICENSE|README.md
