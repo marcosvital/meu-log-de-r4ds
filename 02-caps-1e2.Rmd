@@ -1,0 +1,36 @@
+# Welcome, Caps 1 e 2: o comecinho rápido
+
+Beleza, vamos matar três seções rápidas do livro de uma só vez, belezinha? Aí, do Cap 3 em diante com certeza vamos levar mais tempo, pois a ação de verdade no R vai começar nele.
+
+**Welcome**
+
+OK, seção “welcome”: objetivos do livro, o que você deve conseguir com ele, como comprar a versão física, etc e tal. Vamos adiante, seguindo para a Introdução.
+
+## A introdução
+
+Descrição legal de Data Science e do que o livro oferece pra gente aprender. Aqui começam a aparecer termos como “tidy” (que a gente pode traduzir como algo “arrumadinho”), que está intimamente ligado ao trabalho do Hadley, como o pacote `dplyr`.
+
+E na parte da organização do livro, os autores acabaram de ganhar meu coração, ao repetir algo que eu sempre repito nos meus cursos e sempre penso nos meus tutoriais: *começar a aprender o R com coisas como importação de dados é maçante, chato, um saco… Comece pulando para a parte de visualização, usando dados prontos - e depois volte na parte de importar e ajeitar os dados.* Feliz de saber que eu pensei o mesmo que eles de maneira independente. :D
+
+Neste mesmo sentido, gostei do que eles falam sobre a estrutura dos capítulos: começar com exemplos gerais, e depois cuidar dos detalhes. Bacana!
+
+**Os exercícios**
+
+Ah, e eles mencionam os danados dos exercícios: li críticas sobre este livro nas quais os exercícios são descritos como meio “desnivelados”, com coisas super simples misturadas com coisas muito mais desafiadoras do que o conteúdo do livro deveria permitir. Vamos ver no que dá. Mas uma coisa legal é que usar o R nunca é uma tarefa solitária: tem um monte de gente por aí lendo e brigando com este livro, então podemos usar nossa velha amiga internet para saber mais sobre os exercícios quando eles nos assustarem.
+
+Especialmente interessante pode ser [esta comunidade aqui](https://www.jessemaegan.com/post/r4ds-the-next-iteration/), que tem uma proposta  linda para quem quer ler o livro de maneira mais ou menos coletiva - acho que vou dar uma espiada em algum momento.
+
+Continuando. OK, não vamos aprender Big Data aqui - por mim tudo bem. Ah, e senti uma cutucada ali sobre o `data.table`, hahahaha. Mas beleza, vamos seguindo.
+
+Algumas coisas legais na sequência, comentários sobre outras linguagens (sim, quero aprender Python!), formato dos dados. E interessante o papo sobre testes de hipóteses - pessoalmente estou tratando isso com cada vez mais cautela. Ah, e muito legal ele falar de pre-registration! Open Science, yeah!
+
+Certo, pré-requisitos. Acho que vou sentir falta de ter aprendido programação de maneira mais formal. Mas vou tentar superar isso, vamos sentindo na medida em que formos lendo (notou que uso o plural? espero que vocês estejam me acompanhando daí!). E por fim, beleza, programas e pacotes instalados e atualizados. Ah sim, e a descrição sobre como os códigos do R serão mostrados no livro, tudo belezinha.
+
+Excelentes dicas sobre como conseguir ajuda, exemplos reproduzíveis, buscar coisas na internet: leiam com carinho, são coisas que eu sempre digo também! :)
+
+Eeeeee, beleza! Capítulo 1 concluído! :D
+
+## O capítulo 2 que nem é capítulo
+
+Pois é, na real nem é um capítulo, e sim uma introdução para a segunda parte do livro, que vai falar sobre a parte de exploração dos dados. Vamos aprender `ggplot2`, êba! E veja que um pouco da filosofia dos pacotes do Hadley aparece aqui, quando ele fala que vamos aprender **verbos** para transformação de dados: isto está ligado a como ele pensa nos nomes de funções, e me parece ser uma proposta bem legal. Mas chega de enrolação, e bora mergulhar no capítulo 3, porque estou há muito tempo querendo aprender `ggplot2`!
+

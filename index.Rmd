@@ -28,7 +28,7 @@ Então, puxa vida, por que não aproveitar a oportunidade e fazer as duas coisas
 
 Este meu “livro”, então, é um registro das minhas experiências de aprendizado do R for Data Science. Pense nele como um misto de log das experiências, caderno de anotações, tradução e tutorial. Alguma coisa mais ou menos assim. ;)
 
-Não sei se vou percorrer o livro todo, e nem tenho uma data certa para acabar. Mas e tudo der certo, vou avançar bastante e compartilhar esta experiência com vocês. Vamos lá!
+Não sei se vou percorrer o livro todo, e nem tenho uma data certa para acabar. Mas se tudo der certo, vou avançar bastante e compartilhar esta experiência com vocês. Vamos lá!
 
 ## Como eu estou escrevendo isso? {-}
 
