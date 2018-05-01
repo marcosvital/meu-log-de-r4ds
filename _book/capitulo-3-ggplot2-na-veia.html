@@ -48,6 +48,43 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 </head>
 
@@ -72,6 +109,8 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="capitulo-3-ggplot2-na-veia.html"><a href="capitulo-3-ggplot2-na-veia.html"><i class="fa fa-check"></i><b>3</b> Capítulo 3: ggplot2 na veia!!!!</a><ul>
 <li class="chapter" data-level="3.1" data-path="capitulo-3-ggplot2-na-veia.html"><a href="capitulo-3-ggplot2-na-veia.html#comecando-a-pratica-entendendo-o-tibble"><i class="fa fa-check"></i><b>3.1</b> Começando a prática: entendendo o tibble</a></li>
+<li class="chapter" data-level="3.2" data-path="capitulo-3-ggplot2-na-veia.html"><a href="capitulo-3-ggplot2-na-veia.html#exerciciooooooos"><i class="fa fa-check"></i><b>3.2</b> Exercíciooooooos</a></li>
+<li class="chapter" data-level="3.3" data-path="capitulo-3-ggplot2-na-veia.html"><a href="capitulo-3-ggplot2-na-veia.html#sei-la-como-traduzir-aesthetic-mappings-adequadamente"><i class="fa fa-check"></i><b>3.3</b> Sei lá como traduzir “Aesthetic mappings” adequadamente…</a></li>
 </ul></li>
 </ul>
 
@@ -96,13 +135,124 @@
 <p>Tá bom, entendi que os autores amam ggplot2, beleza. Ah sim, bonus points pra eles por usarem citação do Tukey, que sempre tem citações maneiras e devia ser um cara muito legal, pelo o que eu li sobre ele. :)</p>
 <p>Enfim, vamos lá, a ideia do <code>ggplot2</code> é criar uma <em>gramática de gráficos</em> - o que faz todo sentido quando entendemos o R como linguagem. A ideia básica aqui, se eu entendo bem a proposta, é ter comandos que fazem sentido lógico, de maneira mais intuitiva do que vemos nos gráficos básicos do R.</p>
 <p>Carregar os pacores é moleza, e acho bacana essa organização dos pacotes no <code>tidyverse</code>, assim a gente carrega um tanto de coisa de uma vez.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
+<pre><code>## -- Attaching packages --------</code></pre>
+<pre><code>## v ggplot2 2.2.1     v purrr   0.2.4
+## v tibble  1.4.2     v dplyr   0.7.4
+## v tidyr   0.8.0     v stringr 1.3.0
+## v readr   1.1.1     v forcats 0.3.0</code></pre>
+<pre><code>## -- Conflicts -----------------
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
 <p>Eles não começam usando o bom e velho conjunto de dados iris - seria legal, dados biológicos e tals. Mas tranquilo, vamos mexer com motores de carro então, hehe. O tal do mpg também é um conjuntinho de dados usado em muito exemplo por aí.</p>
 <p>E percebam que a parada já começa com um chute no pau da barraca do R: os dados estão no formato <code>tibble</code>, que é próprio do <code>tidyverse</code>, e não é exatamente igual com o formato <code>data.frame</code> que está na base do R (mas eles são parecidos, e é fácil converter um <code>tibble</code> para <code>data.frame</code> usando o bom e velho <code>as.data.frame()</code>, se precisarmos - espero nem precisar).</p>
 <div id="comecando-a-pratica-entendendo-o-tibble" class="section level2">
 <h2><span class="header-section-number">3.1</span> Começando a prática: entendendo o tibble</h2>
 <p>Carregando os dados, eu ainda tenho que acostumar com o formato <code>tibble</code>, mas acho que é mais coisa de hábito mesmo. Uma das características básicas dele é que se você “chama” o objeto, ele não vai tacar tudo no console como um <code>data.frame</code> faria. Ele mostra 6 linhas (como quando usamos <code>head()</code>) e no exemplo ali ele mostrou 10 colunas (não sei se é sempre assim, mas imagino que sim). Ele também nos dá as dimensões, indica os tipos de variáveis para cada coluna, e no final conta o que ficou de fora. É bacana, acho.</p>
 <p><strong>Vou começar a experimentar, e antes de seguir o rumo do livro, quero entender bem o tibble</strong></p>
-<p>Então vamos lá:</p>
+<p>Então vamos lá, primeiro “chamando” normalmente, como no livro:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mpg</code></pre></div>
+<pre><code>## # A tibble: 234 x 11
+##    manufacturer model    displ  year   cyl trans   drv     cty   hwy fl   
+##    &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;
+##  1 audi         a4         1.8  1999     4 auto(l~ f        18    29 p    
+##  2 audi         a4         1.8  1999     4 manual~ f        21    29 p    
+##  3 audi         a4         2    2008     4 manual~ f        20    31 p    
+##  4 audi         a4         2    2008     4 auto(a~ f        21    30 p    
+##  5 audi         a4         2.8  1999     6 auto(l~ f        16    26 p    
+##  6 audi         a4         2.8  1999     6 manual~ f        18    26 p    
+##  7 audi         a4         3.1  2008     6 auto(a~ f        18    27 p    
+##  8 audi         a4 quat~   1.8  1999     4 manual~ 4        18    26 p    
+##  9 audi         a4 quat~   1.8  1999     4 auto(l~ 4        16    25 p    
+## 10 audi         a4 quat~   2    2008     4 manual~ 4        20    28 p    
+## # ... with 224 more rows, and 1 more variable: class &lt;chr&gt;</code></pre>
+<p>O que acontece quando usamos a boa e velha <code>summary()</code> num tibble?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(mpg)</code></pre></div>
+<pre><code>##  manufacturer          model               displ            year     
+##  Length:234         Length:234         Min.   :1.600   Min.   :1999  
+##  Class :character   Class :character   1st Qu.:2.400   1st Qu.:1999  
+##  Mode  :character   Mode  :character   Median :3.300   Median :2004  
+##                                        Mean   :3.472   Mean   :2004  
+##                                        3rd Qu.:4.600   3rd Qu.:2008  
+##                                        Max.   :7.000   Max.   :2008  
+##       cyl           trans               drv                 cty       
+##  Min.   :4.000   Length:234         Length:234         Min.   : 9.00  
+##  1st Qu.:4.000   Class :character   Class :character   1st Qu.:14.00  
+##  Median :6.000   Mode  :character   Mode  :character   Median :17.00  
+##  Mean   :5.889                                         Mean   :16.86  
+##  3rd Qu.:8.000                                         3rd Qu.:19.00  
+##  Max.   :8.000                                         Max.   :35.00  
+##       hwy             fl               class          
+##  Min.   :12.00   Length:234         Length:234        
+##  1st Qu.:18.00   Class :character   Class :character  
+##  Median :24.00   Mode  :character   Mode  :character  
+##  Mean   :23.44                                        
+##  3rd Qu.:27.00                                        
+##  Max.   :44.00</code></pre>
+<p>Legal, o comportamento é igualzinho a de um <code>data.frame</code> neste caso, o que é excelente.</p>
+<p>Quero ver como fica o <code>str()</code> também:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(mpg)</code></pre></div>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    234 obs. of  11 variables:
+##  $ manufacturer: chr  &quot;audi&quot; &quot;audi&quot; &quot;audi&quot; &quot;audi&quot; ...
+##  $ model       : chr  &quot;a4&quot; &quot;a4&quot; &quot;a4&quot; &quot;a4&quot; ...
+##  $ displ       : num  1.8 1.8 2 2 2.8 2.8 3.1 1.8 1.8 2 ...
+##  $ year        : int  1999 1999 2008 2008 1999 1999 2008 1999 1999 2008 ...
+##  $ cyl         : int  4 4 4 4 6 6 6 4 4 4 ...
+##  $ trans       : chr  &quot;auto(l5)&quot; &quot;manual(m5)&quot; &quot;manual(m6)&quot; &quot;auto(av)&quot; ...
+##  $ drv         : chr  &quot;f&quot; &quot;f&quot; &quot;f&quot; &quot;f&quot; ...
+##  $ cty         : int  18 21 20 21 16 18 18 18 16 20 ...
+##  $ hwy         : int  29 29 31 30 26 26 27 26 25 28 ...
+##  $ fl          : chr  &quot;p&quot; &quot;p&quot; &quot;p&quot; &quot;p&quot; ...
+##  $ class       : chr  &quot;compact&quot; &quot;compact&quot; &quot;compact&quot; &quot;compact&quot; ...</code></pre>
+<p>Ahhhhnnnnnnnnn, vejam que o <code>str</code> mostrou três classes! :O</p>
+<p>Ah, mais um detalhe, este eu achei curioso: as variáveis categóricas (como modelo e fabricante, por exemplo) não estão como fatores, e sim como caracteres. Enfim, é só um conjunto de dados de análise, então deixa quieto…</p>
+<p>Peraí, vou conferir uma coisa aqui:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(mpg)</code></pre></div>
+<pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
+<p>É isso, ele funciona como um objeto de mais de uma classe. Que doido!</p>
+<p>Não sei quais as consequências disso, mas interessante saber. Agora, acho que quando pegamos um <code>data.frame</code>, usamos alguma função do <code>dplyr</code> e criamos um novo objeto, ele é apenas um <code>tibble</code>. Maaaaaaas, não sei, minha experiência com isso é pequena.</p>
+<p>Seguinte: não vou continuar com isso agora, né hora disso não! Vou coltar ao rumo do capítulo, e começar a brincar de grafiquinho, que é legal.</p>
+<p>Então vamos lá, copiando e colando:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy))</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Beleza, facinho.</p>
+<p>O esquema é claramente diferente de um gráfico básico do R, que seria feito com uma função com vários argumentos e, talvez, outras funções acessórias.</p>
+<p>Aqui temos uma função base, a <code>ggplot()</code>, e depois adicionamos o que eu entendo que são as tais camadas: e que neste caso foi apenas uma, usando <code>geom_point</code>.</p>
+<p>Não precisa de las=1, hahahahah, os números já estão na horizontal! ;)</p>
+<p>Ah sim, eu não gosto deste fundo cinza e da falta dos eixos com linhas sólidas, mas isso com certeza será fácil de mexer quando conhecermos melhor o pacote. Não sei o quanto o livro vai nos levar nesta direção, mas o que não falta são tutoriais de <code>ggplot2</code> pela internet afora.</p>
+<p>Tá, ele segue com um exemplo genérico, então vou pegar a deixa e fazer um gráfico no mesmo estilo, mas com outros dados, vamos ver como fica:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> iris) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Sepal.Width))</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Belezinha, rodou direitinho.</p>
+</div>
+<div id="exerciciooooooos" class="section level2">
+<h2><span class="header-section-number">3.2</span> Exercíciooooooos</h2>
+<p>Aimeudeus, chegaram os tais exercícios, será que vamos sobreviver?</p>
+<p>Bora descobrir!</p>
+<p>1 - Essa eu já tinha testado antes, hehe. Mas tá aqui, ele cria apenas um “frame” vazio, esperando as camadinhas:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>mpg)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>2 - Ah, a própria chamada do tibble em questão já indica que são 234 linhas e 11 colunas. E se quiser, sempre dá pra conferir apenas as dimensões assim:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(mpg)</code></pre></div>
+<pre><code>## [1] 234  11</code></pre>
+<p>3 - OK, não vou chamar o help aqui no livro, né? Mas vocês sabem como usar, ele mostrou. ;) <code>drv</code> é uma variável para as três classes de tração: dianteria, traseira e 4X4.</p>
+<p>4 - Essa deve ser de boas, vamos ver:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> cyl, <span class="dt">y =</span> hwy))</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Ahhnnnnnn, eles queriam que a gente notasse que <code>cyl</code> (número de cilindros) é uma variável discreta. Acho que era isso que eles queriam que a gente notasse, né?</p>
+<p>5 - Bora descobrir. Olhando o help e o próprio tibble quando ele foi chamado, vemos que as duas são categóricas (apesar delas não serem fatores, e isto me angustiar profundamente, hahahaha). Então imagino que não vá prestar pra nada mesmo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> class, <span class="dt">y =</span> drv))</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Bom, na verdade até serve para uma coisa: ver quais combinações de tipo de carro com tração existem. Mas só. Não podemos saber, por exemplo, quantos carros se encaixam em cada combinação. Suponho que depois a gente vá mexer nisso, como usando um gráfico de barras, por exemplo.</p>
+<p>OK, os exercício foram de boa, mas foram os primeiros, né? Eram pra ser de boa mesmo.</p>
+</div>
+<div id="sei-la-como-traduzir-aesthetic-mappings-adequadamente" class="section level2">
+<h2><span class="header-section-number">3.3</span> Sei lá como traduzir “Aesthetic mappings” adequadamente…</h2>
+<p>Mas entendo que vamos trabalhar em como mudar a aparência do “mapeamento”, que no caso, até agora, foi feito com o uso de pontos. Uma espiada rápida, e veremos pontinhos coloridos, então é por aí mesmo.</p>
 
 </div>
 </div>

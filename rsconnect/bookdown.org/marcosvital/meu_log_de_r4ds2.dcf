@@ -5,9 +5,9 @@ account: marcosvital
 server: bookdown.org
 hostUrl: https://bookdown.org/__api__
 appId: 1349
-bundleId: 5891
+bundleId: 5909
 url: https://bookdown.org/marcosvital/meu_log_de_r4ds2/
-when: 1525181701.39751
+when: 1525217361.39603
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: LICENSE|README.md

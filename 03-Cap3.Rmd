@@ -8,6 +8,11 @@ Enfim, vamos lá, a ideia do `ggplot2` é criar uma *gramática de gráficos* - 
 
 Carregar os pacores é moleza, e acho bacana essa organização dos pacotes no `tidyverse`, assim a gente carrega um tanto de coisa de uma vez.
 
+```{r}
+library(tidyverse)
+```
+
+
 Eles não começam usando o bom e velho conjunto de dados iris - seria legal, dados biológicos e tals. Mas tranquilo, vamos mexer com motores de carro então, hehe. O tal do mpg também é um conjuntinho de dados usado em muito exemplo por aí.
 
 E percebam que a parada já começa com um chute no pau da barraca do R: os dados estão no formato `tibble`, que é próprio do `tidyverse`, e não é exatamente igual com o formato `data.frame` que está na base do R (mas eles são parecidos, e é fácil converter um `tibble` para `data.frame` usando o bom e velho `as.data.frame()`, se precisarmos - espero nem precisar).
@@ -18,5 +23,112 @@ Carregando os dados, eu ainda tenho que acostumar com o formato `tibble`, mas ac
 
 **Vou começar a experimentar, e antes de seguir o rumo do livro, quero entender bem o tibble**
 
-Então vamos lá:
+Então vamos lá, primeiro "chamando" normalmente, como no livro:
+
+```{r, cache=T}
+mpg
+```
+
+O que acontece quando usamos a boa e velha `summary()` num tibble?
+
+```{r, cache=T}
+summary(mpg)
+```
+
+Legal, o comportamento é igualzinho a de um `data.frame` neste caso, o que é excelente.
+
+Quero ver como fica o `str()` também:
+
+```{r, cache=T}
+str(mpg)
+```
+
+Ahhhhnnnnnnnnn, vejam que o `str` mostrou três classes! :O
+
+Ah, mais um detalhe, este eu achei curioso: as variáveis categóricas (como modelo e fabricante, por exemplo) não estão como fatores, e sim como caracteres. Enfim, é só um conjunto de dados de análise, então deixa quieto...
+
+Peraí, vou conferir uma coisa aqui:
+
+```{r, cache=T}
+class(mpg)
+```
+
+É isso, ele funciona como um objeto de mais de uma classe. Que doido!
+
+Não sei quais as consequências disso, mas interessante saber. Agora, acho que quando pegamos um `data.frame`, usamos alguma função do `dplyr` e criamos um novo objeto, ele é apenas um `tibble`. Maaaaaaas, não sei, minha experiência com isso é pequena.
+
+Seguinte: não vou continuar com isso agora, né hora disso não! Vou coltar ao rumo do capítulo, e começar a brincar de grafiquinho, que é legal.
+
+Então vamos lá, copiando e colando:
+```{r, cache=T}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+Beleza, facinho.
+
+O esquema é claramente diferente de um gráfico básico do R, que seria feito com uma função com vários argumentos e, talvez, outras funções acessórias.
+
+Aqui temos uma função base, a `ggplot()`, e depois adicionamos o que eu entendo que são as tais camadas: e que neste caso foi apenas uma, usando `geom_point`.
+
+Não precisa de las=1, hahahahah, os números já estão na horizontal! ;)
+
+Ah sim, eu não gosto deste fundo cinza e da falta dos eixos com linhas sólidas, mas isso com certeza será fácil de mexer quando conhecermos melhor o pacote. Não sei o quanto o livro vai nos levar nesta direção, mas o que não falta são tutoriais de `ggplot2` pela internet afora.
+
+Tá, ele segue com um exemplo genérico, então vou pegar a deixa e fazer um gráfico no mesmo estilo, mas com outros dados, vamos ver como fica:
+
+```{r, cache=T}
+ggplot(data = iris) + 
+  geom_point(mapping = aes(x = Sepal.Length, y = Sepal.Width))
+```
+
+Belezinha, rodou direitinho.
+
+## Exercíciooooooos
+
+Aimeudeus, chegaram os tais exercícios, será que vamos sobreviver?
+
+Bora descobrir!
+
+1 - Essa eu já tinha testado antes, hehe. Mas tá aqui, ele cria apenas um "frame" vazio, esperando as camadinhas:
+
+```{r, cahe=T}
+ggplot(data=mpg)
+```
+
+2 - Ah, a própria chamada do tibble em questão já indica que são 234 linhas e 11 colunas. E se quiser, sempre dá pra conferir apenas as dimensões assim:
+
+```{r, cache=T}
+dim(mpg)
+```
+
+3 - OK, não vou chamar o help aqui no livro, né? Mas vocês sabem como usar, ele mostrou. ;) `drv` é uma variável para as três classes de tração: dianteria, traseira e 4X4.
+
+4 - Essa deve ser de boas, vamos ver:
+
+```{r, cache=T}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = cyl, y = hwy))
+```
+
+Ahhnnnnnn, eles queriam que a gente notasse que `cyl` (número de cilindros) é uma variável discreta. Acho que era isso que eles queriam que a gente notasse, né?
+
+Ah sim, e que na maioria das vezes os cilindros vem em pares, com aparentemente duas exceções.
+
+5 - Bora descobrir. Olhando o help e o próprio tibble quando ele foi chamado, vemos que as duas são categóricas (apesar delas não serem fatores, e isto me angustiar profundamente, hahahaha). Então imagino que não vá prestar pra nada mesmo:
+
+```{r, cache=T}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = class, y = drv))
+```
+
+Bom, na verdade até serve para uma coisa: ver quais combinações de tipo de carro com tração existem. Mas só. Não podemos saber, por exemplo, quantos carros se encaixam em cada combinação. Suponho que depois a gente vá mexer nisso, como usando um gráfico de barras, por exemplo.
+
+OK, os exercício foram de boa, mas foram os primeiros, né? Eram pra ser de boa mesmo.
+
+## Sei lá como traduzir "Aesthetic mappings" adequadamente...
+
+Mas entendo que vamos trabalhar em como mudar a aparência do "mapeamento", que no caso, até agora, foi feito com o uso de pontos. Uma espiada rápida, e veremos pontinhos coloridos, então é por aí mesmo.
+
+
 
